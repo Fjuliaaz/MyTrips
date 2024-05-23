@@ -1,5 +1,6 @@
 package com.example.projeto_2.repositorio
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import com.example.projeto_2.R
@@ -11,7 +12,7 @@ class ViagemRepositorio {
     class ViagemRepository {
 
         @Composable
-        fun listarTodasAsViagens(): List<Viagem>{
+        fun listarTodasAsViagens(currency: Context): List<Viagem>{
 
             val londres = Viagem(
                 id = 1,

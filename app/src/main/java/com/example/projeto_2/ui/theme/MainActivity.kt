@@ -1,4 +1,4 @@
-package com.example.projeto_2
+package com.example.projeto_2.ui.theme
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,37 +15,27 @@ import androidx.navigation.compose.rememberNavController
 import com.example.projeto_2.screens.SignUp
 import com.example.projeto_2.screens.TelaHome
 import com.example.projeto_2.screens.login
-import com.example.projeto_2.ui.theme.Projeto2Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Projeto2Theme {
+            MaterialTheme{
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+
                     val controleDeNavegacao = rememberNavController()
-                    NavHost(navController = controleDeNavegacao,
-                        startDestination = "Login"
-                    ){
-                        composable(route = "Login"){ login(controleDeNavegacao) }
-                        composable(route = "Home"){ TelaHome(controleDeNavegacao) }
-                        composable(route = "SignUp"){ SignUp(controleDeNavegacao)}
+
+                    NavHost(navController = controleDeNavegacao, startDestination = "cadastro"){
+                        composable("login") { login(controleDeNavegacao) }
+                        composable("cadastro"){ SignUp(controleDeNavegacao)}
+                        composable("home"){ TelaHome(controleDeNavegacao) }
                     }
                 }
             }
         }
     }
 }
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreview() {
-    Projeto2Theme {
-
-    }
-}
-

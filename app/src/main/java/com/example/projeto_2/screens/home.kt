@@ -1,5 +1,6 @@
 package com.example.projeto_2.screens
 
+import android.content.Context
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -38,6 +39,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,12 +47,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.projeto_2.R
+import com.example.projeto_2.repositorio.CategoriaRepositorio
+import com.example.projeto_2.repositorio.ViagemRepositorio
 
 @Composable
-fun TelaHome(controleDeNavegacao: NavHostController) {
+fun TelaHome(controleDeNavegacao: NavHostController?) {
+
+    val viagens = ViagemRepositorio().listarTodasAsViagens(LocalContext.current)
+
+    val categorias = CategoriaRepositorio.listarCategorias(LocalContext.current)
+
     Surface (
         modifier = Modifier.fillMaxSize(),
-        color = Color(0xff576583)
+        color = Color(0xFFFFFFFF)
     ){
         Column (
             verticalArrangement = Arrangement.Center,
@@ -317,7 +326,13 @@ fun TelaHome(controleDeNavegacao: NavHostController) {
     }
 }
 
+private fun ViagemRepositorio.listarTodasAsViagens(current: Context): Any {
+
+    return TODO("Provide the return value")
+}
+
 @Preview (showSystemUi = true, showBackground = true)
 @Composable
-fun TelaHomePreview() {
+fun HomePreview() {
+    TelaHome(controleDeNavegacao = null)
 }

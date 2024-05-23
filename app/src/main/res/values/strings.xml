@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">projeto-2</string>
+    <string name="email">Email contact</string>
+    <string name="password">Password</string>
+    <string name="button_signin"> Sign In</string>
+    <string name="dont_account">Don’t have an account?</string>
+    <string name="signUp_login">Sign Up</string>
+
+    <string name="signUp">Sign Up</string>
+    <string name="create_phrase">Create a new account</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone</string>
+    <string name="email_register">E-mail</string>
+    <string name="password_register">Password</string>
+    <string name="create_account">Create account</string>
+    <string name="signUp_phrase">Already have an account?</string>
+    <string name="signIn">Sign in</string>
+
+    <string name="home_phrase">You/re in Paris</string>
+    <string name="categories">Categories</string>
+    <string name="montain">Montain</string>
+    <string name="snow">Snow</string>
+    <string name="beach">Beach</string>
+    <string name="search_destiny">Search your destiny</string>
+    <string name="past_trips">Past Trips</string>
+
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">          projeto-2</string>
+    <string name="email">             Email de contato</string>
+    <string name="password">          Senha</string>
+    <string name="button_signin">     Entrar</string>
+    <string name="dont_account">      Não tem uma conta?</string>
+    <string name="signUp_login">      Sair</string>
+
+    <string name="signUp">            Sair</string>
+    <string name="create_phrase">     Criar uma nova conta</string>
+    <string name="username">          Nome de Usuario</string>
+    <string name="phone">             Telefone</string>
+    <string name="email_register">    E-mail de cadastro</string>
+    <string name="password_register"> Senha</string>
+    <string name="create_account">    Criar uma nova conta</string>
+    <string name="signUp_phrase">     já tem uma conta?</string>
+    <string name="signIn">            Sair</string>
+
+    <string name="home_phrase">       Você está em Paris</string>
+    <string name="categories">        Categorias</string>
+    <string name="montain">           Montanhas</string>
+    <string name="snow">              Neve</string>
+    <string name="beach">             Praias</string>
+    <string name="search_destiny">    Procure seu destino</string>
+    <string name="past_trips">        Viagens anteriores</string>
+
+</resources>

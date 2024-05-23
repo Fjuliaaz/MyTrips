@@ -32,9 +32,12 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,21 +47,47 @@ import androidx.navigation.NavHostController
 import com.example.projeto_2.R
 
 @Composable
-fun SignUp(controleDeNavegacao: NavHostController) {
+fun SignUp(controleDeNavegacao: NavHostController?) {
+
+    var emailState = remember {
+        mutableStateOf("")
+    }
+
+    var senhaState = remember {
+        mutableStateOf("")
+    }
+
+    var phoneState = remember {
+        mutableStateOf("")
+    }
+
+    var userState = remember {
+        mutableStateOf("")
+    }
+
+    var checkState = remember {
+        mutableStateOf(false)
+    }
+
+    val criadoState = LocalContext.current
+
+    var isErrorState = remember {
+        mutableStateOf(false)
+    }
+
+    var mensagemErrorState = remember {
+        mutableStateOf("")
+    }
+
+
     Surface (
         modifier = Modifier.fillMaxSize(),
-        color = Color(0xff576583)
+        color = Color(0xFFFFFFFF)
     ){
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            Text(
-                text = "Bem vindo a Tela de Cadastro!!",
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
             Button(onClick = { /*TODO*/ }) {
                 Text(text = "Voltar a tela de Login")
 
@@ -303,7 +332,9 @@ fun SignUp(controleDeNavegacao: NavHostController) {
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun SignUpPreview() {}
+fun SignUpPreview() {
+    SignUp(null)
+}
 

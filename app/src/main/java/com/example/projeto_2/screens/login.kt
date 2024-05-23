@@ -29,14 +29,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.projeto_2.repositorio.UsuariosRepository
 
 @Composable
-fun login(controleDeNavegacao: NavHostController) {
+fun login(controleDeNavegacao: NavHostController ?) {
+
+    var cnt = UsuariosRepository(LocalContext.current)
+    var listarUsuarios = cnt.buscarTodosOsUsuarios()
+
+
+    var usuarioState = remember {
+        mutableStateOf("")
+    }
 
     var emailStat = remember {
         mutableStateOf("")
@@ -48,6 +58,10 @@ fun login(controleDeNavegacao: NavHostController) {
 
     var mensagemErroStat = remember {
         mutableStateOf("")
+    }
+
+    var isErrorState = remember {
+        mutableStateOf(false)
     }
 
     Surface (
@@ -87,7 +101,6 @@ fun login(controleDeNavegacao: NavHostController) {
             Button(onClick = {
                 if (emailStat.value == "aluno" && senhaStat.value == "1234"){
                     mensagemErroStat.value = ""
-                    controleDeNavegacao.navigate("home")
                 }else{
                     mensagemErroStat.value = "Email ou Senha incorretos!"
                 }
@@ -249,7 +262,8 @@ fun login(controleDeNavegacao: NavHostController) {
 
 
 
-@Preview(showSystemUi = true)
+@Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun LoginPreview() {
+    login(null)
 }
