@@ -42,7 +42,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -53,9 +52,12 @@ import com.example.projeto_2.repositorio.ViagemRepositorio
 @Composable
 fun TelaHome(controleDeNavegacao: NavHostController?) {
 
-    val viagens = ViagemRepositorio().listarTodasAsViagens(LocalContext.current)
+    val context = LocalContext.current
 
-    val categorias = CategoriaRepositorio.listarCategorias(LocalContext.current)
+    val viagens = ViagemRepositorio().listarTodasAsViagens(context)
+
+
+    val categorias = CategoriaRepositorio().listarCategorias()
 
     Surface (
         modifier = Modifier.fillMaxSize(),
@@ -329,10 +331,4 @@ fun TelaHome(controleDeNavegacao: NavHostController?) {
 private fun ViagemRepositorio.listarTodasAsViagens(current: Context): Any {
 
     return TODO("Provide the return value")
-}
-
-@Preview (showSystemUi = true, showBackground = true)
-@Composable
-fun HomePreview() {
-    TelaHome(controleDeNavegacao = null)
 }

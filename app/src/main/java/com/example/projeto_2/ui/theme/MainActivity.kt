@@ -6,15 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.projeto_2.screens.SignUp
+import com.example.projeto_2.screens.Login
 import com.example.projeto_2.screens.TelaHome
-import com.example.projeto_2.screens.login
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     val controleDeNavegacao = rememberNavController()
 
                     NavHost(navController = controleDeNavegacao, startDestination = "cadastro"){
-                        composable("login") { login(controleDeNavegacao) }
+                        composable("login") { Login(controleDeNavegacao) }
                         composable("cadastro"){ SignUp(controleDeNavegacao)}
                         composable("home"){ TelaHome(controleDeNavegacao) }
                     }

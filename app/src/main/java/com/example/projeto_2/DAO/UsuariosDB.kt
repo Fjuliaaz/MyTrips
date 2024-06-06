@@ -20,7 +20,7 @@ abstract class UsuariosDb : RoomDatabase() {
                 .databaseBuilder(
                     context,
                     UsuariosDb::class.java,
-                    name = "db_triproom"
+                    name = "db_usuarios"
                 )
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
